@@ -26,7 +26,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <h5>Prezzo: </h5>
-                            {{$comic->price}}
+                            {{$comic->price}} $
                         </li>
                         <li class="list-group-item">
                             <h5>Serie: </h5>
