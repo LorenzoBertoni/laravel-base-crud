@@ -18,11 +18,6 @@
                         {{$comic->title}}
                     </h4>
     
-                    <p class="card-text">
-                        Descrizione: 
-                        {{$comic->description}}
-                    </p>
-    
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <h5>Prezzo: </h5>
@@ -47,6 +42,12 @@
                     class="btn btn-primary"
                     >
                         Vedi Dettagli
+                    </a>
+                    <a 
+                    href="{{route('comics.edit', ['comic' => $comic])}}" 
+                    class="btn btn-warning"
+                    >
+                        Modifica
                     </a>
                 </div>
             </div>

@@ -1,10 +1,13 @@
 @extends('layout.app')
 
-@section('title', 'Aggiungi fumetto')
+@section('title', 'Modifica dati')
 
 @section('content')
-    <form action="{{route('comics.store')}}" method="POST">
+    <form action="{{route('comics.update', ['comic' => $comic])}}" method="POST">
+            
         @csrf
+
+        @method('PUT')
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Titolo</label>
@@ -13,6 +16,7 @@
             class="form-control"
             id="title"
             name="title"
+            value="{{$comic->title}}"
             >
         </div>
         <div class="mb-3">
@@ -22,15 +26,17 @@
             id="description"
             class="form-control"
             >
+                {{$comic->description}}
             </textarea>
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label">Thumbnail</label>
             <input 
-            type="text"
+            type="text" 
             class="form-control"
             id="thumb"
             name="thumb"
+            value="{{$comic->thumb}}"
             >
         </div>
         <div class="mb-3">
@@ -38,39 +44,43 @@
             <input 
             type="text" 
             class="form-control"
-            id="price"
+            id="price" 
             name="price"
+            value="{{$comic->price}}"
             >
         </div>
         <div class="mb-3">
             <label for="series" class="form-label">Serie:</label>
             <input 
-            type="text"
+            type="text" 
             class="form-control"
             id="series"
             name="series"
+            value="{{$comic->series}}"
             >
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Data di uscita:</label>
             <input 
             type="date"
-            class="form-control"
-            id="sale_date"
+            class="form-control" 
+            id="sale_date" 
             name="sale_date"
+            value="{{$comic->sale_date}}"
             >
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Genere:</label>
             <input 
             type="type" 
-            class="form-control"
-            id="type"
-            name="type"
+            class="form-control" 
+            id="type" 
+            name="type" 
+            value="{{$comic->type}}"
             >
         </div>
         
-        <button type="submit" class="btn btn-primary">Crea</button>
+        <button type="submit" class="btn btn-primary">Modifica</button>
 
         <a href="{{route('comics.index')}}" class="btn btn-info">
             Torna all'elenco

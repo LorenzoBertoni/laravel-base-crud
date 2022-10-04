@@ -41,7 +41,7 @@
                 
                 <a 
                 href="{{route('comics.index')}}" 
-                class="btn btn-primary"
+                class="btn btn-info"
                 >
                     Torna all'elenco
                 </a>
