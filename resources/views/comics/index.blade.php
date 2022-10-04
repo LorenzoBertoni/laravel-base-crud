@@ -57,7 +57,11 @@
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger">
+                        <button 
+                        type="submit" 
+                        class="btn btn-danger" 
+                        onclick="return confirm('L\'eliminazione dei dati è permanente. Confermando eliminerai l\'elemento selezionato. Desideri procedere?')"
+                        >
                             Elimina
                         </button>
                     </form>
