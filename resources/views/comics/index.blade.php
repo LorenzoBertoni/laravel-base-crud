@@ -39,13 +39,13 @@
                     
                     <a 
                     href="{{route('comics.show', ['comic' => $comic])}}" 
-                    class="btn btn-primary"
+                    class="btn btn-primary mt-3"
                     >
                         Vedi Dettagli
                     </a>
                     <a 
                     href="{{route('comics.edit', ['comic' => $comic])}}" 
-                    class="btn btn-warning"
+                    class="btn btn-warning mt-3 ms-3"
                     >
                         Modifica
                     </a>
@@ -59,7 +59,7 @@
 
                         <button 
                         type="submit" 
-                        class="btn btn-danger" 
+                        class="btn btn-danger mt-3" 
                         onclick="return confirm('L\'eliminazione dei dati è permanente. Confermando eliminerai l\'elemento selezionato. Desideri procedere?')"
                         >
                             Elimina
