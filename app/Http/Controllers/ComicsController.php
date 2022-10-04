@@ -44,7 +44,7 @@ class ComicsController extends Controller
         $newComic->fill($data);
         $newComic->save();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('created', 'Creazione effettuata con successo');
     }
 
     /**
@@ -110,7 +110,7 @@ class ComicsController extends Controller
 
         if ($deletedComic) {
             $deletedComic->delete();
-            return redirect()->route('comics.index');
+            return redirect()->route('comics.index')->with('deleted', 'Eliminazione effettuata con successo');
         } else {
             abort(404);
         }

@@ -3,6 +3,22 @@
 @section('title', 'comics')
 
 @section('content')
+    <div class="container">
+        @if (session('created'))
+            <div class="alert alert-success">
+                {{session('created')}}
+            </div>
+        @endif
+    </div>
+
+    <div class="container">
+        @if (session('deleted'))
+            <div class="alert alert-danger">
+                {{session('deleted')}}
+            </div>
+        @endif
+    </div>
+
     <div class="container d-flex flex-wrap mt-5">
         @foreach ($comics as $comic)
             <div class="card" style="width: 18rem;">
