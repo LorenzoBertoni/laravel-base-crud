@@ -49,6 +49,18 @@
                     >
                         Modifica
                     </a>
+
+                    <form 
+                    action="{{route('comics.destroy', ['comic' => $comic])}}"
+                    method="POST"
+                    >
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger">
+                            Elimina
+                        </button>
+                    </form>
                 </div>
             </div>
         @endforeach
