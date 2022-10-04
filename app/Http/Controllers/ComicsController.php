@@ -95,7 +95,7 @@ class ComicsController extends Controller
         $updatedComic->update($data);
         $updatedComic->save();
 
-        return redirect()->route('comics.show', ['comic' => $updatedComic]);
+        return redirect()->route('comics.show', ['comic' => $updatedComic])->with('status', 'Aggiornamento effettuato con successo');
     }
 
     /**
@@ -114,6 +114,5 @@ class ComicsController extends Controller
         } else {
             abort(404);
         }
-
     }
 }
