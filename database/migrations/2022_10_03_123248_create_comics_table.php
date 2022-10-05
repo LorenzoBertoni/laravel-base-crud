@@ -21,7 +21,7 @@ class CreateComicsTable extends Migration
             $table->string('price', 30);
             $table->string('series', 50);
             $table->date('sale_date');
-            $table->string('type', 50); //! deve diventare un float => fai rollback + modifica
+            $table->string('type', 50);
             $table->timestamps();
         });
     }

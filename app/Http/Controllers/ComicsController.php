@@ -38,6 +38,33 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'title' => 'required|max:255',
+                'description' => 'required',
+                'thumb' => 'required|url',
+                'price' => 'required|min:3',
+                'series' => 'required|min:5',
+                'sale_date' => 'required|date',
+                'type' => 'required|min:5',
+            ],
+            [
+                'title.required' => 'Il campo Titolo deve essere compilato',
+                'title.max' => 'Il campo Titolo deve avere una lunghezza massima di 255 caratteri',
+                'description.required' => 'Il campo Descrizione deve essere compilato',
+                'thumb.required' => 'Il campo Thumbnail deve essere compilato',
+                'thumb.url' => 'Il campo Thumbnail deve coincidere ad un formato URL valido',
+                'price.required' => 'Il campo Prezzo deve essere compilato',
+                'price.min' => 'Il campo Prezzo deve avere una lunghezza minima di 3 caratteri',
+                'series.required' => 'Il campo Serie deve essere compilato',
+                'series.min' => 'Il campo Serie deve avere una lunghezza minima di 5 caratteri',
+                'sale_date.required' => 'Il campo Data di uscita deve essere compilato',
+                'sale_date.date' => 'Inserisci una data valida',
+                'type.required' => 'Il campo Genere deve essere compilato',
+                'type.min' => 'Il campo Genere deve avere una lunghezza minima di 5 caratteri',
+            ]
+        );
+
         $data = $request->all();
 
         $newComic = new Comic();
